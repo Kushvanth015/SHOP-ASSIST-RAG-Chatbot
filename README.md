@@ -39,7 +39,15 @@ This chatbot provides:
 - Build & update FAISS index
 - Save index locally (no need to upload again)
 - Enable Developer Mode (evidence + score + debug)
-
+---
+## 🔐 Login System
+Users are stored in users.json
+```bash
+{
+  "admin": { "password": "admin123", "role": "admin" },
+  "user": { "password": "user123", "role": "user" }
+}
+```
 ---
 
 ## 🔥 Key Features
@@ -107,6 +115,26 @@ In production, this is hidden from users.
 8. Response is shown in chat UI  
 
 ---
+## 📌 Why This Project Matters
+
+### 🔥 Problem
+LLMs hallucinate and don’t know company-specific rules.
+
+### ✅ Solution
+RAG retrieves exact knowledge from internal documents and answers grounded in sources.
+
+Used in:
+- Customer support bots  
+- HR policy assistants  
+- Banking FAQs  
+- Internal company copilots  
+
+### 💡 Real-World Use Cases
+- Amazon/Flipkart customer support chatbot  
+- University PDF assistant  
+- Company policy assistant  
+- Product manual question answering  
+---
 
 ## 📂 Folder Structure
 
@@ -125,4 +153,21 @@ rag-chatbot/
 ├── requirements.txt
 └── README.md
 
-
+```
+---
+✅ Step 2: Install Ollama
+```bash
+Download from:
+https://ollama.com/
+```
+---
+✅ Step 3: Pull required models
+```bash
+ollama pull qwen2.5:3b
+ollama pull nomic-embed-text
+```
+---
+✅ Step 4: Run Streamlit app
+```bash
+streamlit run app.py
+```
